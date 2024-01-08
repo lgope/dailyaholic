@@ -1,7 +1,7 @@
 import "./App.css";
 import CalendarPanel from "./components/Calendar/CalendarPanel";
 import CalendarHeader from "./components/Header/CalendarHeader";
-import SideBar from "./components/SideBar/SideBar";
+import LeftSideBar from "./components/LeftSideBar/LeftSideBar";
 
 const App = () => {
 
@@ -9,8 +9,9 @@ const App = () => {
     <div className="main-panel">
       <CalendarHeader />
       <div className="calendar-panel">
-        <SideBar />
+        <LeftSideBar />
         <CalendarPanel />
+        {/* <RightSideBar /> */}
       </div>
     </div>
   );

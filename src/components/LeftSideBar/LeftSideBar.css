@@ -1,7 +1,7 @@
-.calendar-sidebar {
-  padding: 1.25rem;
+.calendar-left-sidebar {
+  padding: 15px 2px 0 0;
   border-width: 1px;
-  width: 16rem;
+  width: 256px;
 }
 
 .calendar-event-btn {

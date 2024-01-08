@@ -1,9 +1,9 @@
 import CreateEventButton from "./CreateEventButton";
-import "./SideBar.css";
+import "./LeftSideBar.css";
 
 const SideBar = () => {
   return (
-    <aside className="calendar-sidebar">
+    <aside className="calendar-left-sidebar">
       <CreateEventButton />
     </aside>
   );
