@@ -1,0 +1,86 @@
+.calender-header {
+  display: flex;
+  padding-bottom: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  height: 42px;
+}
+
+.calender-header img {
+  margin-right: 0.5rem;
+
+  width: 40px;
+  height: 40px;
+}
+
+.calendar-title {
+  display: inline-block;
+  font-family: "Product Sans", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  padding-left: 8px;
+  position: relative;
+  top: -1.5px;
+  vertical-align: middle;
+}
+
+.calendar-today-btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1.25rem;
+  margin-left: 3rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+}
+
+.calender-prev-month-btn,
+.calender-next-month-btn {
+  border-radius: 21px;
+  border: none;
+
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background-color: transparent;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.calender-prev-month-btn:hover,
+.calender-next-month-btn:hover {
+  background-color: rgb(241, 243, 244);
+}
+
+.calender-prev-month-icon,
+.calender-next-month-icon {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+/* .calender-next-month {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #4b5563;
+  cursor: pointer;
+} */
+
+.calender-current-month-title {
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: #6b7280;
+}

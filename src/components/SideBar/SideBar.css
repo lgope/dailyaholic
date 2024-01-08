@@ -1,0 +1,29 @@
+.calendar-sidebar {
+  padding: 1.25rem;
+  border-width: 1px;
+  width: 16rem;
+}
+
+.calendar-event-btn {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-event-btn:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.calendar-event-create-logo {
+  width: 1.75rem;
+  min-height: 1.75rem;
+}
+
+.calendar-event-btn-title {
+  padding-left: 0.75rem;
+  padding-right: 1.75rem;
+}

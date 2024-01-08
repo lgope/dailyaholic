@@ -1,0 +1,40 @@
+.calendar-panel_date_view {
+  display: grid;
+  flex: 1 1 0%;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.calendar-panel_day {
+  display: flex;
+  flex-direction: column;
+  border-bottom: #e5e7eb 1px solid;
+  border-left: rgb(218, 220, 224) 1px solid;
+}
+
+.calendar-panel_week_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-panel_date {
+  padding: 0.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.calendar-panel_today_date {
+  border-radius: 9999px;
+  color: #ffffff;
+  background-color: #2563eb;
+}
+
+.calendar-week-days {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
