@@ -1,15 +1,18 @@
-import CalendarPanel from "../Calendar/CalendarPanel";
 import CreateEventButton from "./CreateEventButton";
 import "./LeftSideBar.css";
+import SmallCalendar from "./SmallCalendar";
 
-const LeftSideBar = () => {
-  return (
-    <aside className="calendar-left-sidebar">
-      <CreateEventButton />
+interface LeftSideBarPropsType {
+  year: number;
+  monthIdx: number;
+}
 
-      <CalendarPanel className="left-sidebar-small-calender" />
-    </aside>
-  );
-};
+const LeftSideBar = ({ year, monthIdx }: LeftSideBarPropsType) => (
+  <aside className="calendar-left-sidebar">
+    <CreateEventButton />
+
+    <SmallCalendar year={year} monthIdx={monthIdx} />
+  </aside>
+);
 
 export default LeftSideBar;

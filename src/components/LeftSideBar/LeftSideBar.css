@@ -27,3 +27,31 @@
   padding-left: 0.75rem;
   padding-right: 1.75rem;
 }
+
+.leftbar-calendar {
+  justify-content: center;
+
+}
+
+.leftbar-calendar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 29px 10px 0px 9px;
+  font-size: 17px;
+    font-weight: 400;
+
+}
+
+.leftbar-calendar_actions {
+  display: flex;
+  justify-content: center;
+}
+
+.leftbar-calendar_actions button {
+  font-size: 12px;
+}
+
+.leftbar-calendar_actions .material-icons-outlined {
+  font-size: 19px;
+}

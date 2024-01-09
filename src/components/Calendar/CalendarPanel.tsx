@@ -1,34 +1,39 @@
-import React from "react";
 import "./CalendarPanel.css";
-import { demoMonth, demoWeekDays } from "../../utils";
+import { format, isEqual, isToday, startOfMonth } from "date-fns";
 
-const CalendarPanel = ({ className = "" }) => {
-  const TODAY_DATE = "09";
+interface CalendarPanelPropsType {
+  month: Date[];
+  currMonthIndex: number;
+  className?: string;
+}
 
-  return (
-    <div className={`calendar-panel_date_view ${className}`}>
-      {demoMonth.map((days, i) => (
-        <React.Fragment key={i}>
-          {days.map((day, idx) => (
-            <div className="calendar-panel_day" key={idx}>
-              <header className="calendar-panel_week_title">
-                {i === 0 && (
-                  <p className="calendar-week-days">{demoWeekDays[i]}</p>
-                )}
-                <p
-                  className={`calendar-panel_date ${
-                    day === TODAY_DATE ? "calendar-panel_today_date" : ""
-                  }`}
-                >
-                  {day}
-                </p>
-              </header>
-            </div>
-          ))}
-        </React.Fragment>
-      ))}
-    </div>
-  );
-};
+const CalendarPanel = ({
+  month,
+  currMonthIndex,
+  className = "",
+}: CalendarPanelPropsType) => (
+  <div className={`calendar-panel_date_view ${className}`}>
+    {month.map((day, i) => (
+      <div className="calendar-panel_day" key={i}>
+        <header className="calendar-panel_week_title">
+          {i < 7 && <p className="calendar-week-days">{format(day, "EEE")}</p>}
+          <p
+            className={`calendar-panel_date ${
+              isToday(day) ? "calendar-panel_today_date" : ""
+            } ${
+              currMonthIndex !== day.getMonth()
+                ? "calendar-other-month-dates"
+                : ""
+            }`}
+          >
+            {isEqual(day, startOfMonth(day))
+              ? format(day, "MMM d")
+              : format(day, "d")}
+          </p>
+        </header>
+      </div>
+    ))}
+  </div>
+);
 
 export default CalendarPanel;

@@ -1,3 +1,46 @@
+import {
+  Day,
+  eachDayOfInterval,
+  endOfMonth,
+  endOfWeek,
+  startOfMonth,
+  startOfWeek,
+} from "date-fns";
+
+// const splitByWeek = <T>(array: T[], parts: number) =>
+//   array.reduce(
+//     (acc, value, i) => (acc[i % parts].push(value), acc),
+//     [...Array(parts)].map(() => []) as T[][]
+//   );
+
+export const getCurrMonthDates = (
+  year: number = 2023,
+  month: number = 1,
+  firstDayOfWeek: number = 0
+) => {
+  // month first and last date
+  const monthStartDate = startOfMonth(new Date(year, month));
+
+  const monthEndDate = endOfMonth(monthStartDate);
+
+  // week first and last date
+  const firstWeekday = startOfWeek(monthStartDate, {
+    weekStartsOn: firstDayOfWeek as Day,
+  });
+  const lastWeekday = endOfWeek(monthEndDate, {
+    weekStartsOn: firstDayOfWeek as Day,
+  });
+
+  // month date
+  const calendarDates: Date[] = eachDayOfInterval({
+    start: firstWeekday,
+    end: lastWeekday,
+  });
+
+  // return  splitByWeek(calendarDates);
+  return calendarDates;
+};
+
 export const demoWeekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 export const demoMonth = [
@@ -7,42 +50,3 @@ export const demoMonth = [
   ["21", "22", "23", "24", "25", "26", "27"],
   ["28", "29", "31", "30", "01", "02", "03"],
 ];
-
-const data = [
-  {
-    name: 'John Doe',
-    age: 32,
-    gender: 'male',
-    interest: ['movie', 'song'],
-  },
-  {
-    name: 'Alice',
-    age: 30,
-    gender: 'female',
-    interest: ['movie', 'gardening'],
-  },
-  {
-    name: 'Bob',
-    age: 20,
-    gender: 'male',
-    interest: ['movie', 'listening'],
-  },
-  {
-    name: 'Rohim',
-    age: 22,
-    gender: 'male',
-    interest: ['reading', 'song'],
-  },
-  {
-    name: 'Karim',
-    age: 34,
-    gender: 'male',
-    interest: ['movie', 'song'],
-  },
-];
-
-const hasUser = (arr, age) => {
-    return arr.some((item) => item.age === age);
-}
-
-console.log(hasUser(data, 34))

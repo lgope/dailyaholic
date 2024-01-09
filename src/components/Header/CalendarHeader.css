@@ -34,6 +34,8 @@
   margin-left: 3rem;
   border-radius: 0.25rem;
   border-width: 1px;
+
+  cursor: pointer;
 }
 
 .calender-prev-month-btn,
@@ -57,6 +59,7 @@
   align-items: center;
 }
 
+.calendar-today-btn:hover,
 .calender-prev-month-btn:hover,
 .calender-next-month-btn:hover {
   background-color: rgb(241, 243, 244);
