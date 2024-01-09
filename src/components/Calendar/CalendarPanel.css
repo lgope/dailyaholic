@@ -44,32 +44,36 @@
   line-height: 1.25rem;
 }
 
-.left-sidebar-small-calender {
+.left-sidebar-small-calendar {
   display: grid;
   flex: 1 1 0%;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   grid-template-rows: repeat(5, minmax(0, 1fr));
 
-  padding: 40px 6px 16px 0px;
+  padding: 10px 6px 16px 0px;
   width: 248px;
   height: 190px;
 }
 
-.left-sidebar-small-calender .calendar-week-days {
+.left-sidebar-small-calendar .calendar-week-days {
   margin-top: 2px;
   font-size: 10px;
   line-height: 0px;
 }
 
-.left-sidebar-small-calender .calendar-panel_day {
+.left-sidebar-small-calendar .calendar-panel_day {
   display: flex;
   flex-direction: column;
   border: none;
 }
 
-
-.left-sidebar-small-calender .calendar-panel_date {
+.left-sidebar-small-calendar .calendar-panel_date {
   margin-top: 0.25rem;
   font-size: 12px;
   text-align: center;
+  padding: 2px;
+}
+
+.calendar-other-month-dates {
+  color: #ccc;
 }
