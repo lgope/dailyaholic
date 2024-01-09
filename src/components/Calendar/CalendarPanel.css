@@ -28,13 +28,48 @@
 }
 
 .calendar-panel_today_date {
-  border-radius: 9999px;
-  color: #ffffff;
   background-color: #2563eb;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding-top: 0.4rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
 }
 
 .calendar-week-days {
   margin-top: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.left-sidebar-small-calender {
+  display: grid;
+  flex: 1 1 0%;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+
+  padding: 40px 6px 16px 0px;
+  width: 248px;
+  height: 190px;
+}
+
+.left-sidebar-small-calender .calendar-week-days {
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 0px;
+}
+
+.left-sidebar-small-calender .calendar-panel_day {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+
+.left-sidebar-small-calender .calendar-panel_date {
+  margin-top: 0.25rem;
+  font-size: 12px;
+  text-align: center;
 }

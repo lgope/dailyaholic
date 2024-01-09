@@ -1,0 +1,55 @@
+.calendar-right-sidebar {
+  width: 50px;
+  border-left: rgb(218, 220, 224) 1px solid;
+  overflow: hidden;
+
+  padding: 5px 0 0 0;
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(15, minmax(0, 1fr));
+  justify-items: center;
+}
+/* 
+.calendar-event-btn {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-event-btn:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.calendar-event-create-logo {
+  width: 1.75rem;
+  min-height: 1.75rem;
+}
+
+.calendar-event-btn-title {
+  padding-left: 0.75rem;
+  padding-right: 1.75rem;
+} */
+
+.calender-keep-icon,
+.calender-get-add-ons-icon {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.calender-keep-icon {
+  background-color: #fbbd05;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.calender-get-add-ons-icon:hover {
+  background-color: rgb(241, 243, 244);
+}

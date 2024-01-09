@@ -46,11 +46,5 @@
 .calendar-panel {
   display: flex;
   flex: 1 1 0%;
-  border-top: rgb(218,220,224) 1px solid;
-}
-
-.right-sidebar {
-  width: 50px;
-    border-left: rgb(218,220,224) 1px solid;
-    overflow: hidden;
+  border-top: rgb(218, 220, 224) 1px solid;
 }

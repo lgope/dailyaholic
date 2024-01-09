@@ -2,17 +2,19 @@ import React from "react";
 import "./CalendarPanel.css";
 import { demoMonth, demoWeekDays } from "../../utils";
 
-const CalendarPanel = () => {
+const CalendarPanel = ({ className = "" }) => {
   const TODAY_DATE = "09";
 
   return (
-    <div className="calendar-panel_date_view">
+    <div className={`calendar-panel_date_view ${className}`}>
       {demoMonth.map((days, i) => (
         <React.Fragment key={i}>
           {days.map((day, idx) => (
             <div className="calendar-panel_day" key={idx}>
               <header className="calendar-panel_week_title">
-                {i === 0 && <p className="calendar-week-days">{demoWeekDays[i]}</p>}
+                {i === 0 && (
+                  <p className="calendar-week-days">{demoWeekDays[i]}</p>
+                )}
                 <p
                   className={`calendar-panel_date ${
                     day === TODAY_DATE ? "calendar-panel_today_date" : ""
