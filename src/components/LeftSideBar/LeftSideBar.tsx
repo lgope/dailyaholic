@@ -3,15 +3,30 @@ import "./LeftSideBar.css";
 import SmallCalendar from "./SmallCalendar";
 
 interface LeftSideBarPropsType {
-  year: number;
-  monthIdx: number;
+  currYear: number;
+  currMonthIndex: number;
+  month: Date[];
+  onNextMonthClick: () => void;
+  onPrevMonthClick: () => void;
 }
 
-const LeftSideBar = ({ year, monthIdx }: LeftSideBarPropsType) => (
+const LeftSideBar = ({
+  currYear,
+  currMonthIndex,
+  month,
+  onNextMonthClick,
+  onPrevMonthClick,
+}: LeftSideBarPropsType) => (
   <aside className="calendar-left-sidebar">
     <CreateEventButton />
 
-    <SmallCalendar year={year} monthIdx={monthIdx} />
+    <SmallCalendar
+      currYear={currYear}
+      currMonthIndex={currMonthIndex}
+      month={month}
+      onNextMonthClick={onNextMonthClick}
+      onPrevMonthClick={onPrevMonthClick}
+    />
   </aside>
 );
 

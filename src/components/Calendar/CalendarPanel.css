@@ -23,13 +23,13 @@
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  /* line-height: 1.25rem; */
   text-align: center;
 }
 
 .calendar-panel_today_date {
   background-color: #2563eb;
-  height: 20px;
+  height: 18px;
   width: 20px;
   border-radius: 50%;
   padding-top: 0.4rem;
@@ -69,9 +69,14 @@
 
 .left-sidebar-small-calendar .calendar-panel_date {
   margin-top: 0.25rem;
+  display: flex;
   font-size: 12px;
   text-align: center;
   padding: 2px;
+  height: 20px;
+  line-height: 0px;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar-other-month-dates {
