@@ -1,3 +1,4 @@
+import IconButton from "../../ui/Select/IconButton/IconButton";
 import CalendarPanel from "../Calendar/CalendarPanel";
 import { format } from "date-fns";
 
@@ -61,25 +62,21 @@ const SmallCalendar = ({
           {format(new Date(currYear, currMonthIndex), "MMMM")} {currYear}
         </div>
         <div className="leftbar-calendar_actions">
-          <button
+          <IconButton
             onClick={onPrevMonthClick}
             className="calender-prev-month-btn"
             title="Previous month"
-          >
-            <span className="material-icons-outlined calender-prev-month-icon">
-              chevron_left
-            </span>
-          </button>
+            iconName="chevron_left"
+            iconClass="calender-prev-month-icon"
+          />
 
-          <button
+          <IconButton
             onClick={onNextMonthClick}
             className="calender-next-month-btn"
             title="Next month"
-          >
-            <span className="material-icons-outlined calender-next-month-icon">
-              chevron_right
-            </span>
-          </button>
+            iconName="chevron_right"
+            iconClass="calender-next-month-icon"
+          />
         </div>
       </div>
       <CalendarPanel

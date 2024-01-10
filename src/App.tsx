@@ -10,12 +10,16 @@ const App = () => {
   const [currYear, setCurrYear] = useState(new Date().getFullYear());
   const [currMonthIndex, setCurrMonthIndex] = useState(new Date().getMonth());
 
-  const weekDayIndex = 0;
+  const [weekDayIndex, setWeekDayIndex] = useState<string | number>(0);
   const currMonthDates = getCurrMonthDates(
     currYear,
     currMonthIndex,
-    weekDayIndex
+    +weekDayIndex
   );
+
+  const handleOnWeekDayChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
+    setWeekDayIndex((e.currentTarget as HTMLSelectElement).value)
+  }
 
   const onNextMonthClick = () => {
     if (currMonthIndex === 11) {
@@ -48,6 +52,8 @@ const App = () => {
         handleOnTodayClick={handleOnTodayClick}
         onNextMonthClick={onNextMonthClick}
         onPrevMonthClick={onPrevMonthClick}
+        handleOnWeekDayChange={handleOnWeekDayChange}
+        weekDayIndex={weekDayIndex}
       />
       <div className="calendar-panel">
         <LeftSideBar

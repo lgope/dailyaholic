@@ -50,3 +50,13 @@ export const demoMonth = [
   ["21", "22", "23", "24", "25", "26", "27"],
   ["28", "29", "31", "30", "01", "02", "03"],
 ];
+
+export const weekdays = [
+  { value: 0, name: "Sun" },
+  { value: 1, name: "Mon" },
+  { value: 2, name: "Tue" },
+  { value: 3, name: "Wed" },
+  { value: 4, name: "Thu" },
+  { value: 5, name: "Fri" },
+  { value: 6, name: "Sat" },
+];
