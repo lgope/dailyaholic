@@ -4,39 +4,19 @@ import "./CalendarHeader.css";
 
 interface CalendarHeaderPropsType {
   currMonthIndex: number;
-  setCurrMonthIndex: (a: number) => void;
   currYear: number;
-  setCurrYear: (a: number) => void;
+  onNextMonthClick: () => void;
+  onPrevMonthClick: () => void;
+  handleOnTodayClick: () => void;
 }
 
 const CalendarHeader = ({
   currMonthIndex,
-  setCurrMonthIndex,
   currYear,
-  setCurrYear,
+  onNextMonthClick,
+  onPrevMonthClick,
+  handleOnTodayClick,
 }: CalendarHeaderPropsType) => {
-  const onNextMonthClick = () => {
-    if (currMonthIndex === 11) {
-      setCurrMonthIndex(0);
-      setCurrYear(currYear + 1);
-    } else {
-      setCurrMonthIndex(currMonthIndex + 1);
-    }
-  };
-
-  const onPrevMonthClick = () => {
-    if (currMonthIndex === 0) {
-      setCurrMonthIndex(11);
-      setCurrYear(currYear - 1);
-    } else {
-      setCurrMonthIndex(currMonthIndex - 1);
-    }
-  };
-
-  const handleOnTodayClick = () => {
-    setCurrMonthIndex(new Date().getMonth());
-    setCurrYear(new Date().getFullYear());
-  }
 
   return (
     <header className="calender-header">
