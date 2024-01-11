@@ -1,4 +1,4 @@
-import IconButton from "../../ui/Select/IconButton/IconButton";
+import IconButton from "../../ui/IconButton/IconButton";
 import CalendarPanel from "../Calendar/CalendarPanel";
 import { format } from "date-fns";
 
@@ -13,48 +13,9 @@ interface SmallCalendarPropsType {
 const SmallCalendar = ({
   currYear,
   currMonthIndex,
-  month,
   onNextMonthClick,
   onPrevMonthClick,
 }: SmallCalendarPropsType) => {
-  // const [currYear, setCurrYear] = useState<number>(0);
-  // const [currMonthIndex, setCurrMonthIndex] = useState<number>(0);
-
-  // const [currMonthDates, setCurrMonthDates] = useState<Date[]>([]);
-
-  // const weekDayIndex = 0;
-
-  // updating local state if main calendar panel value changes
-  // useEffect(() => {
-  //   setCurrYear(year);
-  //   setCurrMonthIndex(monthIdx);
-  //   setCurrMonthDates(getCurrMonthDates(year, monthIdx, weekDayIndex));
-  // }, [year, monthIdx]);
-
-  // useEffect(() => {
-  //   setCurrMonthDates(
-  //     getCurrMonthDates(currYear, currMonthIndex, weekDayIndex)
-  //   );
-  // }, [currYear, currMonthIndex]);
-
-  // const onNextMonthClick = () => {
-  //   if (currMonthIndex === 11) {
-  //     setCurrMonthIndex(0);
-  //     setCurrYear(currYear + 1);
-  //   } else {
-  //     setCurrMonthIndex(currMonthIndex + 1);
-  //   }
-  // };
-
-  // const onPrevMonthClick = () => {
-  //   if (currMonthIndex === 0) {
-  //     setCurrMonthIndex(11);
-  //     setCurrYear(currYear - 1);
-  //   } else {
-  //     setCurrMonthIndex(currMonthIndex - 1);
-  //   }
-  // };
-
   return (
     <div className="leftbar-calendar">
       <div className="leftbar-calendar_header">
@@ -79,11 +40,7 @@ const SmallCalendar = ({
           />
         </div>
       </div>
-      <CalendarPanel
-        month={month}
-        currMonthIndex={currMonthIndex}
-        className="left-sidebar-small-calendar"
-      />
+      <CalendarPanel className="left-sidebar-small-calendar" />
     </div>
   );
 };

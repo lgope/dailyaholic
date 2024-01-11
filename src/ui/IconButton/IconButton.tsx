@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IconButtonPropsType {
   title?: string;
   onClick: () => void;

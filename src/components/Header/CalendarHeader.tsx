@@ -3,27 +3,30 @@ import calendarLogo from "../../assets/calendarLogo.png";
 import "./CalendarHeader.css";
 import { weekdays } from "../../utils";
 import Select from "../../ui/Select/Select";
-import IconButton from "../../ui/Select/IconButton/IconButton";
+import IconButton from "../../ui/IconButton/IconButton";
+import { useCalendarContext } from "../../context/CalendarContext";
 
-interface CalendarHeaderPropsType {
-  currMonthIndex: number;
-  currYear: number;
-  weekDayIndex: number | string;
-  onNextMonthClick: () => void;
-  onPrevMonthClick: () => void;
-  handleOnTodayClick: () => void;
-  handleOnWeekDayChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
+// interface CalendarHeaderPropsType {
+//   currMonthIndex: number;
+//   currYear: number;
+//   weekDayIndex: number | string;
+//   onNextMonthClick: () => void;
+//   onPrevMonthClick: () => void;
+//   handleOnTodayClick: () => void;
+//   handleOnWeekDayChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+// }
 
-const CalendarHeader = ({
-  currMonthIndex,
-  currYear,
-  onNextMonthClick,
-  onPrevMonthClick,
-  handleOnTodayClick,
-  handleOnWeekDayChange,
-  weekDayIndex,
-}: CalendarHeaderPropsType) => {
+const CalendarHeader = () => {
+  const {
+    weekDayIndex,
+    currYear,
+    currMonthIndex,
+    handleOnTodayClick,
+    onPrevMonthClick,
+    onNextMonthClick,
+    handleOnWeekDayChange
+  } = useCalendarContext();
+
   return (
     <header className="calender-header">
       <div className="hearder-left">
