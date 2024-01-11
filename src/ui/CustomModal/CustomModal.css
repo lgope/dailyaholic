@@ -1,0 +1,42 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .body {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    position: relative;
+}
+.modal .modal-close-btn {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    float: right;
+    padding: 0rem;
+    transition: all 0.3 ease;
+}
+.modal .modal-close-btn :hover {
+    background-color: #999;
+    border-radius: 0.5rem;
+}
+.modal .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}

@@ -79,6 +79,28 @@
   align-items: center;
 }
 
+.left-sidebar-small-calendar .calendar-day-event {
+display: none;
+}
+
 .calendar-other-month-dates {
   color: #ccc;
+}
+
+.calendar-day-event {
+  flex: 1 1 0%;
+  cursor: pointer;
+}
+.calendar-day-event_label {
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #c7d2fe;
 }

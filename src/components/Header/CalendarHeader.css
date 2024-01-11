@@ -5,6 +5,20 @@
   padding-right: 1rem;
   align-items: center;
   height: 48px;
+
+  justify-content: space-between;
+}
+
+.hearder-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hearder-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .calender-header img {
@@ -39,6 +53,7 @@
 }
 
 .calender-prev-month-btn,
+.calender-header-search-btn,
 .calender-next-month-btn {
   border-radius: 21px;
   border: none;
@@ -61,6 +76,7 @@
 
 .calendar-today-btn:hover,
 .calender-prev-month-btn:hover,
+.calender-header-search-btn:hover,
 .calender-next-month-btn:hover {
   background-color: rgb(241, 243, 244);
 }
@@ -84,6 +100,10 @@
   margin-left: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 700;
-  color: #6b7280;
+  font-weight: 550;
+  color: #273441;
+}
+
+.calender-header-search-btn {
+  margin-right: 5px;
 }

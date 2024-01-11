@@ -1,52 +1,79 @@
 import { format } from "date-fns";
 import calendarLogo from "../../assets/calendarLogo.png";
 import "./CalendarHeader.css";
+import { weekdays } from "../../utils";
+import Select from "../../ui/Select/Select";
+import IconButton from "../../ui/IconButton/IconButton";
+import { useCalendarContext } from "../../context/CalendarContext";
 
-interface CalendarHeaderPropsType {
-  currMonthIndex: number;
-  currYear: number;
-  onNextMonthClick: () => void;
-  onPrevMonthClick: () => void;
-  handleOnTodayClick: () => void;
-}
+// interface CalendarHeaderPropsType {
+//   currMonthIndex: number;
+//   currYear: number;
+//   weekDayIndex: number | string;
+//   onNextMonthClick: () => void;
+//   onPrevMonthClick: () => void;
+//   handleOnTodayClick: () => void;
+//   handleOnWeekDayChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+// }
 
-const CalendarHeader = ({
-  currMonthIndex,
-  currYear,
-  onNextMonthClick,
-  onPrevMonthClick,
-  handleOnTodayClick,
-}: CalendarHeaderPropsType) => {
+const CalendarHeader = () => {
+  const {
+    weekDayIndex,
+    currYear,
+    currMonthIndex,
+    handleOnTodayClick,
+    onPrevMonthClick,
+    onNextMonthClick,
+    handleOnWeekDayChange
+  } = useCalendarContext();
 
   return (
     <header className="calender-header">
-      <img src={calendarLogo} alt="calendar" className="calendar-logo" />
-      <h1 className="calendar-title">Calendar</h1>
-      <button onClick={handleOnTodayClick} className="calendar-today-btn">
-        Today
-      </button>
-      <button
-        onClick={onPrevMonthClick}
-        className="calender-prev-month-btn"
-        title="Previous month"
-      >
-        <span className="material-icons-outlined calender-prev-month-icon">
-          chevron_left
-        </span>
-      </button>
+      <div className="hearder-left">
+        <img src={calendarLogo} alt="calendar" className="calendar-logo" />
+        <h1 className="calendar-title">Calendar</h1>
 
-      <button
-        onClick={onNextMonthClick}
-        className="calender-next-month-btn"
-        title="Next month"
-      >
-        <span className="material-icons-outlined calender-next-month-icon">
-          chevron_right
-        </span>
-      </button>
-      <h2 className="calender-current-month-title">
-        {format(new Date(currYear, currMonthIndex), "MMMM")} {currYear}
-      </h2>
+        <button onClick={handleOnTodayClick} className="calendar-today-btn">
+          Today
+        </button>
+
+        <IconButton
+          onClick={onPrevMonthClick}
+          className="calender-prev-month-btn"
+          title="Previous month"
+          iconName="chevron_left"
+          iconClass="calender-prev-month-icon"
+        />
+
+        <IconButton
+          onClick={onNextMonthClick}
+          className="calender-next-month-btn"
+          title="Next month"
+          iconName="chevron_right"
+          iconClass="calender-next-month-icon"
+        />
+
+        <h2 className="calender-current-month-title">
+          {format(new Date(currYear, currMonthIndex), "MMMM")} {currYear}
+        </h2>
+      </div>
+
+      <div className="hearder-right">
+        <IconButton
+          onClick={() => {}}
+          className="calender-header-search-btn"
+          title="Search"
+          iconName="search"
+          iconClass="calender-next-month-icon"
+        />
+
+        <Select
+          onChange={handleOnWeekDayChange}
+          options={weekdays}
+          value={weekDayIndex}
+          title="Change Day"
+        />
+      </div>
     </header>
   );
 };
